@@ -9,7 +9,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 interface IBotaoFavoritoProps {
   personagem: IPersonagem;
 }
-
+/**
+ * Componente Botão Favorito - adicionar ou remover personagens dos favoritos.
+ *
+ * @component
+ * @param {IPersonagem} personagem - O personagem que o botão vai modificar o estado de favorito.
+ */
 const BotaoFavorito: FC<IBotaoFavoritoProps> = ({ personagem }) => {
   const dispatch = useDispatch();
   const favoritos = useSelector((state: RootState) => state.favoritos);

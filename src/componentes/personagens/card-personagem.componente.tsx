@@ -8,7 +8,12 @@ import { IPersonagem } from "../../redux/types";
 interface ICardPersonagemProps {
   personagem: IPersonagem;
 }
-
+/**
+ * Componente CardPersonagem - exibe detalhes do personagem e um botão favorito.
+ *
+ * @component
+ * @param {IPersonagem} personagem - O personagem a ser exibido.
+ */
 const CardPersonagem: FC<ICardPersonagemProps> = ({ personagem }) => {
   const navigate = useNavigate();
 

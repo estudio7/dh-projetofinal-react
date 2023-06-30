@@ -10,7 +10,11 @@ import CardEpisodio from "../componentes/episodios/card-episodio.componente"; //
 import "./Detalhe.css";
 
 type AppDispatch = ThunkDispatch<RootState, unknown, AnyAction>;
-
+/**
+ * Componente DetalhePersonagem - exibe detalhes do personagem e episódios associados.
+ *
+ * @component
+ */
 const DetalhePersonagem = () => {
   const dispatch = useDispatch<AppDispatch>(); 
   const { id } = useParams<{ id: string }>();

@@ -1,5 +1,10 @@
 import "./card-episodio.css";
-
+/**
+ * Componente CardEpisodio - exibe detalhes do episódio.
+ *
+ * @component
+ * @param {any} episodio - O episódio a ser exibido.
+ */
 const CardEpisodio = ({ episodio }) => {
   return (
     <div className="card-episodio">

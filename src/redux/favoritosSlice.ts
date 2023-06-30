@@ -1,7 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';  
 import { AppThunk } from './store';
 import { IPersonagem } from './types';
-
+/**
+ * Esta função é uma ação assíncrona (thunk) que carrega a lista de personagens favoritos
+ * do armazenamento local do navegador.
+ */
 export const carregarFavoritos = (): AppThunk => async (dispatch) => {
   const favoritosArmazenados = JSON.parse(localStorage.getItem('favoritos') || "[]") as IPersonagem[];
   if (favoritosArmazenados) {
@@ -10,7 +13,10 @@ export const carregarFavoritos = (): AppThunk => async (dispatch) => {
     });
   }
 };
-
+/**
+ * Este slice de estado gerencia a lista de personagens favoritos.
+ * Ela define como a lista de favoritos deve ser alterada em resposta a diferentes ações.
+ */
 export const favoritosSlice = createSlice({
   name: 'favoritos',
   initialState: [] as IPersonagem[],
