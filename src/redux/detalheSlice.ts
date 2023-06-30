@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, SerializedError } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 interface DetalheState {
   personagemDetalhe: any | null;

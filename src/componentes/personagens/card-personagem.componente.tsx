@@ -13,7 +13,7 @@ const CardPersonagem: FC<ICardPersonagemProps> = ({ personagem }) => {
   const navigate = useNavigate();
 
   const redirectToDetails = () => {
-    navigate(`/detalhes/${personagem.id}`);
+    navigate(`/personagem/${personagem.id}`); 
   }
 
   return (

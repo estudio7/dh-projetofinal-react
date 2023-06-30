@@ -1,4 +1,3 @@
-// card-episodio.componente.jsx
 import "./card-episodio.css";
 
 const CardEpisodio = ({ episodio }) => {

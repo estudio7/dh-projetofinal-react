@@ -1,10 +1,11 @@
 .card-episodio {
   display: flex;
   flex-direction: column;
-  width: fit-content;
   background-color: #d0d0d0;
   padding: 10px 20px;
   border-radius: 5px;
+  align-items: stretch;
+  
 }
 
 .card-episodio h4 {
@@ -21,8 +22,15 @@
 .card-episodio div {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .card-episodio div span:nth-child(1) {
   margin-right: 10px;
+}
+
+.detalhe-personagem .episodios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }

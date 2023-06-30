@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AnyAction } from 'redux'; 
@@ -7,7 +6,7 @@ import { fetchPersonagemDetalhe, fetchEpisodiosPorPersonagem } from '../redux/de
 import { RootState } from '../redux/store'; 
 import { ThunkDispatch } from 'redux-thunk';
 import BotaoFavorito from "../componentes/botoes/botao-favorito.componente";
-import CardEpisodio from "../componentes/episodios/card-episodio.componente";
+import CardEpisodio from "../componentes/episodios/card-episodio.componente"; // Importado
 import "./Detalhe.css";
 
 type AppDispatch = ThunkDispatch<RootState, unknown, AnyAction>;
@@ -19,10 +18,9 @@ const DetalhePersonagem = () => {
 
   useEffect(() => {
     if (id) {
-      dispatch(fetchPersonagemDetalhe(id.toString()));
+      dispatch(fetchPersonagemDetalhe(id));
     }
   }, [dispatch, id]);
-  
 
   useEffect(() => {
     if (personagemDetalhe) {
@@ -41,7 +39,9 @@ const DetalhePersonagem = () => {
         <span>{personagemDetalhe.name}</span>
         <BotaoFavorito personagem={personagemDetalhe} />
         <h2>Episódios:</h2>
-        {episodios.map(episodio => <CardEpisodio episodio={episodio} key={episodio.id} />)}
+        <div className="episodios">
+          {episodios.map(episodio => <CardEpisodio episodio={episodio} key={episodio.id} />)}
+        </div>
       </div>
     </div>
   );
