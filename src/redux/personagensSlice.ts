@@ -7,7 +7,7 @@ interface PersonagensState {
 }
 
 const initialState: PersonagensState = {
-  lista: [], 
+  lista: [],
   paginaAtual: 1,
 };
 
@@ -16,7 +16,8 @@ export const personagensSlice = createSlice({
   initialState,
   reducers: {
     fetchPersonagensSuccess: (state, action: PayloadAction<IPersonagem[]>) => {
-      state.lista = action.payload; 
+      state.lista = action.payload;
+    },
     setPage: (state, action: PayloadAction<number>) => {
       state.paginaAtual = action.payload;
     },

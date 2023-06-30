@@ -5,7 +5,8 @@ export const fetchPersonagens = (pagina: number): AppThunk => async (dispatch) =
   try {
     const response = await fetch(`https://rickandmortyapi.com/api/character?page=${pagina}`);
     const data = await response.json();
-    dispatch(fetchPersonagensSuccess(data.results)); 
+    dispatch(fetchPersonagensSuccess(data.results));
+  } catch (error) {
     console.error('Erro na requisição:', error);
   }
 };

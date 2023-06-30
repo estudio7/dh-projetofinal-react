@@ -18,8 +18,11 @@ const DetalhePersonagem = () => {
   const { personagemDetalhe, episodios, status } = useSelector((state: RootState) => state.detalhe);
 
   useEffect(() => {
-    dispatch(fetchPersonagemDetalhe(Number(id)));
+    if (id) {
+      dispatch(fetchPersonagemDetalhe(id.toString()));
+    }
   }, [dispatch, id]);
+  
 
   useEffect(() => {
     if (personagemDetalhe) {

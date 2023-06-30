@@ -1,8 +1,15 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, SerializedError } from '@reduxjs/toolkit';
+
+interface DetalheState {
+  personagemDetalhe: any | null;
+  episodios: any[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+}
 
 export const fetchPersonagemDetalhe = createAsyncThunk(
   'detalhe/fetchPersonagemDetalhe',
-  async (idPersonagem) => {
+  async (idPersonagem: string) => {
     const response = await fetch(`https://rickandmortyapi.com/api/character/${idPersonagem}`);
     return response.json();
   }
@@ -19,7 +26,7 @@ export const fetchEpisodiosPorPersonagem = createAsyncThunk(
 
 export const detalheSlice = createSlice({
   name: 'detalhe',
-  initialState: { personagemDetalhe: null, episodios: [], status: 'idle', error: null as string | null },
+  initialState: { personagemDetalhe: null, episodios: [] as any[], status: 'idle', error: null as string | null } as DetalheState,
   reducers: {},
   extraReducers: builder => {
     builder
